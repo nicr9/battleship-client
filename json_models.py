@@ -65,17 +65,17 @@ class JSONResponseModels:
 
         def __init__(self, game_id, status, width, height,
             winner, players, boards):
-        self.game_id = game_id
-        self.status = status
-        self.width = width
-        self.height = height
-        self.winner = winner
-        self.players = players
-        self.boards = boards
+            self.game_id = game_id
+            self.status = status
+            self.width = width
+            self.height = height
+            self.winner = winner
+            self.players = players
+            self.boards = boards
 
     class GetJoinGameResponse(object):
 
-        def __init__(self)
+        # def __init__(self)
 
     class GetGamesList(object):
 
