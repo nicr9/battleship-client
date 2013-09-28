@@ -1,5 +1,5 @@
 """
-Handles api requests
+Handles API requests
 
 Handles API requests. Note that request_string should not begin with a /
 """
@@ -16,8 +16,15 @@ def create_and_start_game(token, player2_id):
     """ sets game to ready and lets you set your ships"""
     return requests.get(API_ADDRESS + token + "/game/new/" + player2_id).json()
 
-def join_game(token,game_id):
-    return requests.get(API_ADDRESS + token + "/game/" + game_id + "/join").json()
+def join_game(token, game_id):
+    """joins a game in progress and lets you start setting ships""""
+    return requests.get(API_ADDRESS + token + "/game/" + game_id + \
+        "/join").json()
+
+def set_ships_random(token, game_id):
+    """sets the ships randomly"""
+    return requests.get(API_ADDRESS + token + "/game/" + game_id + \
+        "/randomize").json()
 
 def shoot(token, game_id, x, y):
     # TODO: Make sure game is in fight status
