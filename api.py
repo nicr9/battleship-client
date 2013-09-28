@@ -14,7 +14,8 @@ def create_new_player(player_name):
 
 def create_and_start_game(token, player2_id):
     """ sets game to ready and lets you set your ships"""
-    return requests.get(API_ADDRESS + token + "/game/new/" + str(player2_id)).json()
+    return requests.get(API_ADDRESS + token + "/game/new/" + \
+        str(player2_id)).json()
 
 def join_game(token, game_id):
     """joins a game in progress and lets you start setting ships"""
