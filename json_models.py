@@ -61,18 +61,25 @@ class JSONResponseModels:
             self.height = height
             self.players = players
 
-    class GetOpenGamesResponse(object):
-        def __init__(self,open_games):
-            self.open_games = open_games
+    class GetCurrentGameStateResponse(object):
+
+        def __init__(self, game_id, status, width, height,
+            winner, players, boards):
+        self.game_id = game_id
+        self.status = status
+        self.width = width
+        self.height = height
+        self.winner = winner
+        self.players = players
+        self.boards = boards
+
+    class GetJoinGameResponse(object):
+
+        def __init__(self)
 
     class GetGamesList(object):
 
-        class Game(object):
-            def __init__(self,game_id,status,width,height):
-                self.game_id = game_id
-                self.status = status
-                self.width = width
-                self.height = height
+
 
         def all_created_games():
             pass
@@ -94,6 +101,14 @@ class JSONResponseModels:
 
         def my_ongoing_games():
             pass
+
+class Game(object):
+            """Represents a game in a game list response"""
+            def __init__(self, game_id, status, width, height):
+                self.game_id = game_id
+                self.status = status
+                self.width = width
+                self.height = height
 
 
 
