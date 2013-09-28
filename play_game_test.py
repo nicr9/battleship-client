@@ -9,7 +9,7 @@ from statespace import StateSpace
 
 if __name__ == '__main__':
     # Create both players
-    player1 = api.create_new_player("DROPdsf")
+    player1 = api.create_new_player("DROP TABLE everything")player2_id
     #player2 = api.create_new_player("TESTasd")
     # Host starts game
 
