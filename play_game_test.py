@@ -20,7 +20,7 @@ if __name__ == '__main__':
     player2_ship_poitions = api.set_ships_random(
         token=player2["token"], game_id=new_game["id"])
     #print("Player 1 board: " + str(player1_ship_poitions))
-    print("Player 2 board: " + str(player2_ship_poitions))
+    #print("Player 2 board: " + str(player2_ship_poitions))
     while player2_ship_poitions["status"] != "fight":
         sleep(0.1)
     # print("READY!")
@@ -29,3 +29,13 @@ if __name__ == '__main__':
     #    x=)
     # TODO: Being fighting using AI algos
     # TODO: Catch exception on shoot when game has finished
+    board_height = player1_ship_poitions["height"]
+    board_width = player1_ship_poitions["width"]
+    coords = [(x,y) for x in range(0,board_width) for y in range(0,board_height)]
+    for x in coords:
+        api.shoot(token=player1["token"], game_id=new_game["id"],
+            x=x[0],y=[1])
+        api.shoot(token=player2["token"], game_id=new_game["id"],
+            x=x[0],y=[1])
+        print("Shot")
+    print("I'm done")

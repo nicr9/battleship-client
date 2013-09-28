@@ -29,7 +29,7 @@ def set_ships_random(token, game_id):
 
 def shoot(token, game_id, x, y):
     # TODO: Make sure game is in fight status
-    return requests.get(API_ADDRESS + token + "/game/" + game_id + \
+    return requests.get(API_ADDRESS + token + "/game/" + str(game_id) + \
         "/shoot/", params = {'x' : x, 'y' : y} ).json()
 
 def raw_get(request_string):
