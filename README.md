@@ -15,5 +15,5 @@ pip freeze > requirements.txt
 Then you can install all dependencies using:
 
 ```shell
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 ```
