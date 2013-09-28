@@ -8,13 +8,17 @@ import requests
 
 API_ADDRESS = "http://battleship-env-1.elasticbeanstalk.com/"
 
-def get(request_string):
-    """Returns JSON response from API with provided request string"""
-    return requests.get(API_ADDRESS + request_string).json()
+def create_new_player(player_name):
+    return requests.get(API_ADDRESS + "/player/new?=" + player_name
 
-def post(request_string):
+def shoot(token, game_id, x, y):
+    # TODO: Make sure game is in fight status
+    return requests.get(API_ADDRESS + token + "/game/" + game_id + \
+        "/shoot/", params = {'x' : x, 'y' : y} ).json()
+
+def raw_get(request_string):
     """Returns JSON response from API with provided request string"""
     return requests.get(API_ADDRESS + request_string).json()
 
 # if __name__ == '__main__':
-#    print(get("player/new?name=Player Name"))
+#    print(raw_get("player/new?name=Player Name"))
